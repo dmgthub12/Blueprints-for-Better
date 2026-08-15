@@ -21,8 +21,10 @@ export default async function handler(req, res) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Event:</strong> ${event}</p>
-        <p><strong>Skills & Interests:</strong> ${
-          Array.isArray(interests) ? interests.join(", ") : interests || "None"
+        <p><strong>Skills:</strong> ${
+          Array.isArray(interests)
+            ? interests.join(", ")
+            : interests || "None"
         }</p>
       `,
     });
