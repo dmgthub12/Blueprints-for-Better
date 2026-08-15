@@ -44,15 +44,15 @@
             <legend>Parent/Guardian Information</legend>
             <label>
               <span>Full Name</span>
-              <input type="text" placeholder="Jane Doe" />
+              <input type="text" placeholder="John Doe" />
             </label>
             <label>
               <span>Email Address</span>
-              <input type="email" placeholder="jane.doe@example.com" />
+              <input type="email" placeholder="john.doe@example.com" />
             </label>
             <label class="full-width">
               <span>Phone Number</span>
-              <input type="tel" placeholder="(555) 000-0000" />
+              <input type="tel" placeholder="123-456-7890" />
             </label>
           </fieldset>
 
@@ -65,7 +65,9 @@
             <label>
               <span>Age</span>
               <select>
-                <option>Select Age</option>
+               <option disabled selected>Select Age</option>
+                <option>6</option>
+                <option>7</option>
                 <option>8</option>
                 <option>9</option>
                 <option>10</option>
@@ -74,8 +76,6 @@
                 <option>13</option>
                 <option>14</option>
                 <option>15</option>
-                <option>16</option>
-                <option>17</option>
               </select>
             </label>
             <div class="interest-field full-width">
@@ -84,7 +84,7 @@
                 <label><input type="checkbox" /> Woodworking</label>
                 <label><input type="checkbox" /> STEM</label>
                 <label><input type="checkbox" /> Architecture</label>
-                <label><input type="checkbox" /> Drafting</label>
+                <label><input type="checkbox" /> Construction</label>
               </div>
             </div>
           </fieldset>
@@ -94,10 +94,12 @@
             <label class="full-width">
               <span>Available Workshops</span>
               <select>
-                <option>Select a Program</option>
-                <option>Featured Community Build</option>
-                <option>Main Street Workshop</option>
-                <option>Community Garden</option>
+                <option disabled selected>Select a Program</option>
+                <option>Coming Soon</option>
+                <option>Coming Soon</option>
+                <option>Coming Soon</option>
+                <option>Coming Soon</option>
+                <option>Coming Soon</option>
               </select>
             </label>
           </fieldset>
@@ -110,14 +112,14 @@
             </label>
             <label>
               <span>Contact Number</span>
-              <input type="tel" placeholder="(555) 000-0000" />
+              <input type="tel" placeholder="123-456-7890" />
             </label>
           </fieldset>
 
           <div class="registration-submit">
             <p>
               By clicking below, you agree to our program policies and liability waivers regarding youth
-              participation in physical building activities.
+              participation.
             </p>
             <button type="submit">Complete Registration <span aria-hidden="true">-&gt;</span></button>
           </div>
