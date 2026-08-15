@@ -1475,7 +1475,7 @@ a {
 .why-section {
   width: min(850px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 48px 0 126px;
+  padding: 48px 0 48px;
   text-align: center;
 }
 
