@@ -1206,59 +1206,6 @@ a {
   transform: translateX(-50%);
 }
 
-.role-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  width: min(980px, 100%);
-  margin: 0 auto;
-}
-
-.role-card {
-  min-height: 260px;
-  padding: 26px 24px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #ffffff;
-  text-align: left;
-}
-
-.role-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 22px;
-  border-radius: 8px;
-  color: var(--blue-950);
-  background: #dfe9ff;
-}
-
-.role-icon svg {
-  width: 23px;
-  height: 23px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.2px;
-}
-
-.role-card h3 {
-  margin: 0;
-  color: var(--blue-950);
-  font-family: "Plus Jakarta Sans", Inter, sans-serif;
-  font-size: 19px;
-  line-height: 1.12;
-}
-
-.role-card p {
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.45;
-}
-
 .application-section {
   padding: 42px clamp(18px, 3vw, 40px) 70px;
 }
