@@ -1080,13 +1080,18 @@ a {
 }
 
 .idea-panel {
+  position: relative;
   width: 90%;
   max-width: 1200px;
   margin: 70px auto;
-  postion: relative;
   padding: 60px 32px;
   box-sizing: border-box;
   text-align: center;
+  overflow: hidden;
+  border-radius: 14px;
+  color: #ffffff;
+  background: var(--blue-950);
+}
 }
 
 .idea-panel::after {
