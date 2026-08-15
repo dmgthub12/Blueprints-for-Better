@@ -39,20 +39,20 @@
 
       <section class="registration-card" aria-label="Youth registration form">
         <p class="coord-label">Coord: REG-04 // Section-A</p>
-        <form class="registration-form">
+        <form id="registration-form" class="registration-form">
           <fieldset>
             <legend>Parent/Guardian Information</legend>
             <label>
               <span>Full Name</span>
-              <input required type="text" placeholder="John Doe" />
+              <input required type="text" name="parentName" placeholder="John Doe" />
             </label>
             <label>
               <span>Email Address</span>
-              <input required type="email" placeholder="john.doe@example.com" />
+              <input required type="email" name="parentEmail" placeholder="john.doe@example.com" />
             </label>
             <label class="full-width">
               <span>Phone Number</span>
-              <input required type="tel" placeholder="123-456-7890" />
+              <input required type="tel" name="parentPhone" placeholder="123-456-7890" />
             </label>
           </fieldset>
 
@@ -60,31 +60,31 @@
             <legend>Child Information</legend>
             <label class="wide-field">
               <span>Child's Full Name</span>
-              <input required type="text" placeholder="John Doe Jr." />
+              <input required type="text" name="childName" placeholder="John Doe Jr." />
             </label>
             <label>
               <span>Age</span>
-              <select>
-               <option disabled selected>Select Age</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
+              <select required name="age">
+                <option value="" disabled selected>Select Age</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
               </select>
             </label>
             <div class="interest-field full-width">
               <span>Specific Interests</span>
               <div class="interest-grid">
-                <label><input type="checkbox" /> Woodworking</label>
-                <label><input type="checkbox" /> STEM</label>
-                <label><input type="checkbox" /> Architecture</label>
-                <label><input type="checkbox" /> Construction</label>
+                <label><input type="checkbox" name="interests" value="Woodworking" /> Woodworking</label>
+                <label><input type="checkbox" name="interests" value="STEM" /> STEM</label>
+                <label><input type="checkbox" name="interests" value="Architecture" /> Architecture</label>
+                <label><input type="checkbox" name="interests" value="Construction" /> Construction</label>
               </div>
             </div>
           </fieldset>
@@ -93,14 +93,14 @@
             <legend>Program Selection</legend>
             <label class="full-width">
               <span>Available Workshops</span>
-              <select>
-                <option disabled selected>Select a Program</option>
-                <option>Coming Soon</option>
-                <option>Coming Soon</option>
-                <option>Coming Soon</option>
-                <option>Coming Soon</option>
-                <option>Coming Soon</option>
-              </select>
+              <select required name="program">
+                <option value="" disabled selected>Select a Program</option>
+                <option value="Coming Soon 1">Coming Soon</option>
+                <option value="Coming Soon 2">Coming Soon</option>
+                <option value="Coming Soon 3">Coming Soon</option>
+                <option value="Coming Soon 4">Coming Soon</option>
+                <option value="Coming Soon 5">Coming Soon</option>
+            </select>
             </label>
           </fieldset>
 
@@ -108,11 +108,11 @@
             <legend class="emergency">Emergency Contact</legend>
             <label>
               <span>Contact Name</span>
-              <input required type="text" placeholder="Emergency Contact Name" />
+              <input required type="text" name="emergencyName" placeholder="Emergency Contact Name" />
             </label>
             <label>
               <span>Contact Number</span>
-              <input required type="tel" placeholder="123-456-7890" />
+              <input required type="tel" name="emergencyPhone" placeholder="123-456-7890" />
             </label>
           </fieldset>
 
@@ -123,6 +123,7 @@
             </p>
             <button type="submit">Complete Registration <span aria-hidden="true">-&gt;</span></button>
           </div>
+          <p id="registrationMessage" aria-live="polite"></p>
         </form>
       </section>
     </main>
@@ -177,5 +178,52 @@
         </p>
       </div>
     </footer>
+    <script>
+      const form = document.getElementById("registrationForm");
+      const message = document.getElementById("registrationMessage");
+    
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+    
+        const formData = new FormData(form);
+    
+        const interests = formData.getAll("interests");
+    
+        const data = {
+          parentName: formData.get("parentName"),
+          parentEmail: formData.get("parentEmail"),
+          parentPhone: formData.get("parentPhone"),
+          childName: formData.get("childName"),
+          age: formData.get("age"),
+          interests: interests,
+          program: formData.get("program"),
+          emergencyName: formData.get("emergencyName"),
+          emergencyPhone: formData.get("emergencyPhone")
+        };
+    
+        message.textContent = "Submitting registration...";
+    
+        try {
+          const response = await fetch("/api/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+    
+          const result = await response.json();
+    
+          if (!response.ok) {
+            throw new Error(result.error || "Registration failed");
+          }
+    
+          message.textContent = "Registration submitted successfully!";
+          form.reset();
+        } catch (error) {
+          message.textContent = "Something went wrong. Please try again.";
+        }
+      });
+    </script>
   </body>
 </html>
