@@ -1385,7 +1385,7 @@ a {
 }
 
 .about-leadership {
-  padding: 48px clamp(24px, 5vw, 72px) 72px;
+  padding: 92px clamp(24px, 5vw, 72px) 72px;
 }
 
 .about-leadership .section-heading {
