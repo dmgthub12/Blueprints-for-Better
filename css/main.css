@@ -1080,13 +1080,9 @@ a {
 }
 
 .idea-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
   width: min(1320px, 100%);
-  margin: 70px auto 0;
+  margin: 70px auto 0 auto;
   padding: clamp(56px, 7vw, 82px) 32px;
   overflow: hidden;
   border-radius: 14px;
