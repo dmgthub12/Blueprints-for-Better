@@ -389,16 +389,23 @@
       const previousButton = document.querySelector(".carousel-prev");
       const nextButton = document.querySelector(".carousel-next");
 
+      function getScrollAmount() {
+        const card = carousel.querySelector(".listing-card");
+        const gap = 28;
+
+        return card.offsetWidth + gap;
+      }
+
       nextButton.addEventListener("click", () => {
         carousel.scrollBy({
-          left: carousel.clientWidth,
+          left: getScrollAmount(),
           behavior: "smooth"
         });
       });
 
       previousButton.addEventListener("click", () => {
         carousel.scrollBy({
-          left: -carousel.clientWidth,
+          left: -getScrollAmount(),
           behavior: "smooth"
         });
       });
