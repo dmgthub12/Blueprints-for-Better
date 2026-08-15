@@ -46,7 +46,7 @@
             <p class="eyebrow">Application Form</p>
             <h2>Volunteer Application</h2>
           </div>
-          <form class="volunteer-form" action="/api/volunteer" method="POST">
+          <form id="volunteerForm" class="volunteer-form" action="/api/volunteer" method="POST">
             <label>
               <span>Full Name</span>
               <input required type="text" name="name" placeholder="e.g. John Doe" />
@@ -85,6 +85,8 @@
                 <path d="M16 3.1a4 4 0 0 1 0 7.8" />
               </svg>
             </button>
+            
+            <p id="formMessage" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -140,5 +142,51 @@
         </p>
       </div>
     </footer>
+    
+    <script>
+      const form = document.getElementById("volunteerForm");
+      const message = document.getElementById("formMessage");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+      message.textContent = "Submitting...";
+
+      const formData = new FormData(form);
+
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        event: formData.get("event"),
+        interests: formData.getAll("interests"),
+      };
+
+      try {
+        const response = await fetch("/api/volunteer", {
+            method: "POST",
+            headers: {
+          "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          message.textContent =
+            "Thank you! Your volunteer application was submitted successfully.";
+          form.reset();
+        } else {
+          message.textContent =
+            result.error || "Something went wrong. Please try again.";
+        }
+      } catch (error) {
+        message.textContent =
+          "Something went wrong. Please try again.";
+      }
+  });
+</script>
+    
   </body>
 </html>
