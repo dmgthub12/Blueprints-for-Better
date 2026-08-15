@@ -1080,9 +1080,10 @@ a {
 }
 
 .idea-panel {
-  width: calc(100% - 48px);
+  width: 90%;
   max-width: 1200px;
-  margin: 70px auto 0;
+  margin: 70px auto;
+  postion: relative;
   padding: 60px 32px;
   box-sizing: border-box;
   text-align: center;
