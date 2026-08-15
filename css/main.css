@@ -1083,7 +1083,7 @@ a {
   position: relative;
   width: 90%;
   max-width: 1200px;
-  margin: 70px auto;
+  margin: 0 auto;
   padding: 60px 32px;
   box-sizing: border-box;
   text-align: center;
