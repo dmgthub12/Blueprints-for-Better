@@ -12,25 +12,7 @@
     <link href="./css/main.css?v=20260809-foundation-icons-linefix-v3" rel="stylesheet" />
     <title>Events | Blueprints for Better</title>
   </head>
-  <script>
-    const carousel = document.getElementById("eventCarousel");
-    const previousButton = document.querySelector(".carousel-prev");
-    const nextButton = document.querySelector(".carousel-next");
-
-    nextButton.addEventListener("click", () => {
-      carousel.scrollBy({
-        left: carousel.clientWidth / 3,
-        behavior: "smooth"
-      });
-    });
-
-    previousButton.addEventListener("click", () => {
-      carousel.scrollBy({
-        left: -(carousel.clientWidth / 3),
-        behavior: "smooth"
-      });
-    });
-  </script>
+  
   <body>
     <svg class="icon-sprite" aria-hidden="true">
       <symbol id="icon-calendar" viewBox="0 0 24 24">
@@ -402,5 +384,26 @@
         </p>
       </div>
     </footer>
+    <script>
+      const carousel = document.getElementById("eventCarousel");
+      const previousButton = document.querySelector(".carousel-prev");
+      const nextButton = document.querySelector(".carousel-next");
+
+      nextButton.addEventListener("click", () => {
+        carousel.scrollBy({
+          left: carousel.clientWidth,
+          behavior: "smooth"
+        });
+      });
+
+      previousButton.addEventListener("click", () => {
+        carousel.scrollBy({
+          left: -carousel.clientWidth,
+          behavior: "smooth"
+        });
+      });
+    </script>
+</body>
+</html>
   </body>
 </html>
