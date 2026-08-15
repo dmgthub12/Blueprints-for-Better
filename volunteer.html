@@ -46,29 +46,29 @@
             <p class="eyebrow">Application Form</p>
             <h2>Volunteer Application</h2>
           </div>
-          <form class="volunteer-form">
+          <form class="volunteer-form" action="/api/volunteer" method="POST">
             <label>
               <span>Full Name</span>
-              <input type="text" placeholder="e.g. John Doe" />
+              <input required type="text" name="name" placeholder="e.g. John Doe" />
             </label>
             <label>
               <span>Email Address</span>
-              <input required type="email" placeholder="johndoe@example.com" />
+              <input required type="email" name="email" placeholder="johndoe@example.com" />
             </label>
             <label>
               <span>Phone Number</span>
-              <input required type="tel" placeholder="123-456-7890" />
+              <input required type="tel" name="phone" placeholder="123-456-7890" />
             </label>
             <fieldset>
               <legend>Skills & Interests</legend>
-              <label><input type="checkbox" /> Woodworking</label>
-              <label><input type="checkbox" /> STEM</label>
-              <label><input type="checkbox" /> Labor</label>
-              <label><input type="checkbox" /> Events</label>
+              <input type="checkbox" name="interests" value="Woodworking" />
+               <input type="checkbox" name="interests" value="STEM" />
+               <input type="checkbox" name="interests" value="Labor" />
+               <input type="checkbox" name="interests" value="Events" />
             </fieldset>
             <label class="full-width">
               <span>Select an Event</span>
-              <select required>
+              <select required name="event">
                 <option value="none">None</option>
                 <option>Coming Soon</option>
                 <option>Coming Soon</option>
