@@ -1080,15 +1080,22 @@ a {
 }
 
 .idea-panel {
-  position: relative;
-  width: min(1320px, 100%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
   margin: 70px auto 0 auto;
-  padding: clamp(56px, 7vw, 82px) 32px;
-  overflow: hidden;
-  border-radius: 14px;
-  color: #ffffff;
-  background: var(--blue-950);
+  padding: 60px 32px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+
+  border-radius: 14px;
+  background: var(--blue-950);
+  color: white;
+}
+
 }
 
 .idea-panel::after {
