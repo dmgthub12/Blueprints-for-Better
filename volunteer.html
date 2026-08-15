@@ -53,11 +53,11 @@
             </label>
             <label>
               <span>Email Address</span>
-              <input type="email" placeholder="john@example.com" />
+              <input required type="email" placeholder="johndoe@example.com" />
             </label>
             <label>
               <span>Phone Number</span>
-              <input type="tel" placeholder="(555) 000-0000" />
+              <input required type="tel" placeholder="123-456-7890" />
             </label>
             <fieldset>
               <legend>Skills & Interests</legend>
@@ -68,11 +68,12 @@
             </fieldset>
             <label class="full-width">
               <span>Select an Event</span>
-              <select>
+              <select required>
+                <option value="none">None</option>
                 <option>Coming Soon</option>
-                <option>October 24-26 Featured Event</option>
-                <option>November 12 Workshop</option>
-                <option>November 18 Community Garden</option>
+                <option>Coming Soon</option>
+                <option>Coming Soon</option>
+                <option>Coming Soon</option>
               </select>
             </label>
             <button class="button button-primary-blue full-width" type="submit">
