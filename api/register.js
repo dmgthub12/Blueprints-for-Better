@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     } = req.body;
 
     const { error } = await resend.emails.send({
-      from: "Blueprints for Better <onboarding@resend.dev>",
+      from: "Blueprints for Better <register@blueprintsforbetterfoundation.org>",
       to: [process.env.VOLUNTEER_TO_EMAIL],
       replyTo: parentEmail,
       subject: `New Youth Registration - ${childName}`,
