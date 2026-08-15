@@ -1081,7 +1081,7 @@ a {
 .idea-panel {
   position: relative;
   width: min(1320px, 100%);
-  margin: 0 auto;
+  margin: 70px auto;
   padding: clamp(56px, 7vw, 82px) 32px;
   overflow: hidden;
   border-radius: 14px;
