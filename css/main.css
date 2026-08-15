@@ -1801,3 +1801,10 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+#formMessage {
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
+  text-align: center;
+  font-weight: 700;
+}
