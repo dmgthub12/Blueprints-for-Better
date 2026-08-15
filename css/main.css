@@ -1764,40 +1764,44 @@ a {
 
 .carousel-wrapper {
   position: relative;
-  width: min(1420px, 100%);
-  margin: 0 auto 70px;
-  padding: 0 55px;
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto 80px;
+  padding: 0 60px;
 }
 
-.event-list {
-  display: flex;
+#eventCarousel {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: 100%;
   gap: 28px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
 }
 
-.event-list::-webkit-scrollbar {
-  display: none;
-}
-
-.listing-card {
-  flex: 0 0 calc((100% - 56px) / 3);
+#eventCarousel .listing-card {
+  flex: 0 0 calc((100% - 56px) / 3) !important;
+  width: calc((100% - 56px) / 3) !important;
+  min-width: calc((100% - 56px) / 3) !important;
   scroll-snap-align: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   z-index: 10;
-  width: 44px;
-  height: 44px;
-  border: 0;
+  width: 46px;
+  height: 46px;
+  border: none;
   border-radius: 50%;
+  color: #ffffff;
   background: var(--blue-950);
-  color: white;
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
   transform: translateY(-50%);
 }
@@ -1808,4 +1812,18 @@ a {
 
 .carousel-next {
   right: 0;
+}
+
+@media (max-width: 720px) {
+  .carousel-wrapper {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  #eventCarousel .listing-card {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}
 }
