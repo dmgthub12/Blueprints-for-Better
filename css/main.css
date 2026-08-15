@@ -1838,3 +1838,10 @@ a {
   text-align: center;
   font-weight: 700;
 }
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
