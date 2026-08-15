@@ -93,6 +93,7 @@ a {
 
 .site-nav {
   display: flex;
+  
   align-items: center;
   justify-content: center;
   gap: 42px;
@@ -979,14 +980,19 @@ a {
 }
 
 .event-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  display: flex;
+  gap: 28px;
   width: min(1320px, 100%);
   margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 10px 10px 40px;
 }
 
 .listing-card {
+  flex: 0 0 calc((100% - 56px) / 3);
+  scroll-snap-align: start;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 12px;
