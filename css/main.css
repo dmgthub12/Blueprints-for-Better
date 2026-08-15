@@ -1766,14 +1766,6 @@ a {
   font-weight: 700;
 }
 
-#registrationMessage {
-  grid-column: 1/ -1;
-  margin: 6px 0 0;
-  width: 100%;
-  text-align: center;
-  font-weight: 700;
-}
-
 .carousel-wrapper {
   position: relative;
   width: min(1320px, calc(100% - 48px));
@@ -1837,4 +1829,12 @@ a {
     width: 100% !important;
     min-width: 100% !important;
   }
+}
+
+#registrationMessage {
+  grid-column: 1/ -1;
+  margin: 6px 0 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
 }
